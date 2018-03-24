@@ -24,6 +24,7 @@ body {
     padding-right: 2em;
     width: 11em;
     color: #323740;
+    text-decoration: none;
 }
 
 .bootstrap-override .nav-bar {
@@ -42,6 +43,8 @@ body {
 
 #site-header-title {
     font-family: 'IBM Plex Mono', sans-serif;
+    color: #323740;
+    text-decoration: none;
 }
 
 .recipe-grid {

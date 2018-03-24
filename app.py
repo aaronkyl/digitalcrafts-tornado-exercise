@@ -15,7 +15,7 @@ class TemplateHandler(tornado.web.RequestHandler):
 
 class MainHandler(TemplateHandler):
     def get(self):
-        self.render_template("base.html", {})
+        self.render_template("home.html", {})
         
 class TestHandler(TemplateHandler):
     def get(self):
