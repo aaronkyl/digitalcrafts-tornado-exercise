@@ -1,10 +1,17 @@
-* {
-    border: 1px solid red !important;
-}
+/** {*/
+/*    border: 1px solid red !important;*/
+/*}*/
 
 html, body {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    /* to ensure footer stays at bottom */
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
 }
 
 .bootstrap-override .navbar-nav li:not(:last-child) {
@@ -12,12 +19,20 @@ html, body {
 }
 
 .bootstrap-override .navbar-nav li {
+    text-align: center;
     padding-left: 2em;
     padding-right: 2em;
-    max-width: 10%;
+    width: 11em;
 }
+
+.bootstrap-override .nav-bar {
+    z-index: 900;
+    background-color: red;
+}
+
 .content {
     border-top: 1px solid #3e4550;
+    padding-bottom: 100px;
 }
 
 #site-header {
@@ -29,9 +44,13 @@ html, body {
 }
 
 #footer-main {
+    /* footer sticking to bottom solution from https://stackoverflow.com/questions/34796085/how-to-stick-footer-to-bottom-not-fixed-even-with-scrolling */
     text-align: center;
     justify-content: center;
     position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
     bottom: 0;
     background-color: #3e4550;
     color: white;
