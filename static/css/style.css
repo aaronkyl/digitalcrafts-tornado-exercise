@@ -43,6 +43,10 @@ body {
     font-family: 'IBM Plex Mono', sans-serif;
 }
 
+.recipe-grid {
+    max-width: 960px;
+}
+
 .recipe-grid-item {
     padding: 40px;
     justify-content: center;
