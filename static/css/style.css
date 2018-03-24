@@ -43,6 +43,23 @@ body {
     font-family: 'IBM Plex Mono', sans-serif;
 }
 
+.recipe-grid-item {
+    padding: 40px;
+    justify-content: center;
+}
+
+.recipe-grid-item figure img {
+    width: 100%;
+}
+
+.recipe-grid-item figure figcaption {
+    text-align: center;
+    margin-top: -2em;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
 #footer-main {
     /* footer sticking to bottom solution from https://stackoverflow.com/questions/34796085/how-to-stick-footer-to-bottom-not-fixed-even-with-scrolling */
     text-align: center;

@@ -20,11 +20,16 @@ class MainHandler(TemplateHandler):
 class TestHandler(TemplateHandler):
     def get(self):
         self.render_template("test.html", {})
+        
+class RecipeHandler(TemplateHandler):
+    def get(self):
+        self.render_template("recipes.html", {})
 
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/test", TestHandler),
+        (r"/recipes", RecipeHandler),
         (
             r"/static/(.*)",
             tornado.web.StaticFileHandler,

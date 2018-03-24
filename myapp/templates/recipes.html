@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Recipes
+{% endblock %}
+
+{% block pagetitle %}
+Recipes
+{% endblock %}
+
+{% block main %}
+    <div class="container recipe-grid">
+        <div class="row">
+            <div class="col-md-6 recipe-grid-item">
+                <a href="">
+                    <figure>
+                        <img src="static/img/pasta.jpeg" alt="pasta">
+                        <figcaption>Creamy Pasta</figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="col-md-6 recipe-grid-item">
+                <a href="">
+                    <figure>
+                        <img src="static/img/salad.jpg" alt="pasta">
+                        <figcaption>Tasty Salad</figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="col-md-6 recipe-grid-item">
+                <a href="">
+                    <figure>
+                        <img src="static/img/steak.jpeg" alt="pasta">
+                        <figcaption>Delicious Steak</figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
