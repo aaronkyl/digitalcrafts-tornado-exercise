@@ -14,15 +14,16 @@ body {
     height: auto !important;
 }
 
-.bootstrap-override .navbar-nav li:not(:last-child) {
+.bootstrap-override .navbar-nav a:not(:last-child) {
     border-right: 1px solid lightgrey;
 }
 
-.bootstrap-override .navbar-nav li {
+.bootstrap-override .navbar-nav a {
     text-align: center;
     padding-left: 2em;
     padding-right: 2em;
     width: 11em;
+    color: #323740;
 }
 
 .bootstrap-override .nav-bar {
@@ -52,11 +53,19 @@ body {
     justify-content: center;
 }
 
-.recipe-grid-item figure img {
+.recipe-grid-item a {
+    text-decoration: none;
+}
+
+.recipe-grid-item img {
     width: 100%;
 }
 
-.recipe-grid-item figure figcaption {
+.recipe-grid-item:hover img {
+    opacity: 0.5;
+}
+
+.recipe-grid-item figcaption {
     text-align: center;
     margin-top: -2em;
     color: white;
@@ -85,4 +94,9 @@ body {
 #footer-bottom h3 {
     font-size: .8em;
     margin: .5em auto;
+}
+
+#footer-bottom a {
+    color: #FFA31C;
+    text-decoration: none;
 }
