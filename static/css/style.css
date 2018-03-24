@@ -1,0 +1,48 @@
+* {
+    border: 1px solid red !important;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bootstrap-override .navbar-nav li:not(:last-child) {
+    border-right: 1px solid lightgrey;
+}
+
+.bootstrap-override .navbar-nav li {
+    padding-left: 2em;
+    padding-right: 2em;
+    max-width: 10%;
+}
+.content {
+    border-top: 1px solid #3e4550;
+}
+
+#site-header {
+    text-align: center;
+}
+
+#site-header-title {
+    font-family: 'IBM Plex Mono', sans-serif;
+}
+
+#footer-main {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    background-color: #3e4550;
+    color: white;
+}
+
+#footer-bottom {
+    text-align: center;
+    background-color: #323740;
+}
+
+#footer-bottom h3 {
+    font-size: .8em;
+    margin: .5em auto;
+}
