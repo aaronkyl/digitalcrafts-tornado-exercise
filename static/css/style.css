@@ -27,6 +27,12 @@ body {
     text-decoration: none;
 }
 
+@media only screen and (max-width: 576px) {
+    .bootstrap-override .navbar-nav a {
+        width: 100%;
+    }
+}
+
 .bootstrap-override .nav-bar {
     z-index: 900;
     background-color: red;
@@ -47,13 +53,35 @@ body {
     text-decoration: none;
 }
 
-.recipe-grid {
+.background-darkened {
+    background-color: black;
+}
+
+.bgimg1 {
+    background-image: url("../img/pizza.jpeg");
+    min-height: 400px;
+}
+
+.bgimg1, .bgimg2 {
+    opacity: .75;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.recipe-grid, .home-content {
     max-width: 960px;
 }
 
 .recipe-grid-item {
     padding: 40px;
     justify-content: center;
+}
+
+.recipe-grid-item figure {
+    margin: 0;
 }
 
 .recipe-grid-item a {
@@ -64,13 +92,14 @@ body {
     width: 100%;
 }
 
-.recipe-grid-item:hover img {
+.recipe-grid-item img:hover {
     opacity: 0.5;
 }
 
 .recipe-grid-item figcaption {
     text-align: center;
     margin-top: -2em;
+    margin-bottom: 0;
     color: white;
     font-size: 2em;
     font-weight: bold;
