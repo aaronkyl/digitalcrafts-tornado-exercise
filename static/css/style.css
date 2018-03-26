@@ -12,9 +12,6 @@ body {
     position: relative;
     min-height: 100%;
     height: auto !important;
-}
-
-p {
     font-size: 1.2em;
 }
 
@@ -51,16 +48,29 @@ p {
     text-align: center;
 }
 
-#site-header-title {
+.bootstrap-override #site-header-title h1 {
     font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 4rem !important;
     color: #323740;
+}
+
+.bootstrap-override #site-header-title {
     text-decoration: none;
+}
+
+.home-content {
+    padding-top: 2em;
+}
+
+.home-content ul {
+    list-style: none;
 }
 
 .background-darkened {
     background-color: black;
 }
 
+/* Parallax tutorial https://www.w3schools.com/howto/howto_css_parallax.asp */
 .bgimg1 {
     background-image: url("../img/pizza.jpeg");
     min-height: 400px;
@@ -125,6 +135,7 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     bottom: 0;
     background-color: #3e4550;
     color: white;
+    font-size: .8em;
 }
 
 #footer-bottom {
@@ -138,6 +149,7 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
 }
 
 #footer-bottom a {
-    color: #FFA31C;
+    color: white;
     text-decoration: none;
+    font-size: 1.15em;
 }
