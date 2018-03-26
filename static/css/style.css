@@ -14,6 +14,10 @@ body {
     height: auto !important;
 }
 
+p {
+    font-size: 1.2em;
+}
+
 .bootstrap-override .navbar-nav a:not(:last-child) {
     border-right: 1px solid lightgrey;
 }
@@ -80,10 +84,6 @@ body {
     justify-content: center;
 }
 
-.recipe-grid-item figure {
-    margin: 0;
-}
-
 .recipe-grid-item a {
     text-decoration: none;
 }
@@ -92,17 +92,26 @@ body {
     width: 100%;
 }
 
+/* There is some weird sibling opacity issue where the z-index is autoassigned(?) unless specified
+by the user, so the h4 was given position: relative and ahigh z-index to force it to ignore its
+sibling's opacity change.
+https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image-opacity */
 .recipe-grid-item img:hover {
     opacity: 0.5;
 }
 
-.recipe-grid-item figcaption {
+.recipe-grid-item h4 {
     text-align: center;
     margin-top: -2em;
     margin-bottom: 0;
+    padding-top: .35em;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
+    position: relative;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .5);
+    height: 2em;
 }
 
 #footer-main {
