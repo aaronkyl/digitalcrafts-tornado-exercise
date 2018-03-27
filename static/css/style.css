@@ -20,7 +20,7 @@ body {
 header {
     background-color: #323740;
     color: white;
-    outline: 1px solid white;
+    outline: 1px dashed white;
     outline-offset: -10px;
     padding: 10px;
 }
@@ -35,14 +35,16 @@ header {
     padding-right: 2em;
     width: 11em;
     color: white;
-    text-decoration: none;
+    text-decoration: underline #FF3547;
+    /*background-color: #FF3547;*/
 }
 
-@media only screen and (max-width: 576px) {
-    .bootstrap-override .navbar-nav a {
-        width: 100%;
-    }
+.bootstrap-override .navbar-nav a:hover {
+    color: #FF3547;
+    text-decoration: underline white;
 }
+
+
 
 .bootstrap-override .nav-bar {
     z-index: 900;
@@ -52,11 +54,17 @@ header {
     background-color: transparent !important;
 }
 
+.bootstrap-override .navbar-toggler-icon {
+    color: white;
+}
+
 .content {
     padding-bottom: 100px;
     max-width: 80%;
     margin: auto;
     background-color: #FEFFFF;
+    border-right: 10px solid lightgrey;
+    border-left: 10px solid lightgrey;
 }
 
 #site-header {
@@ -67,6 +75,17 @@ header {
     font-family: 'IBM Plex Mono', sans-serif;
     font-size: 4rem !important;
     color: white;
+    padding-top: 10px;
+}
+
+#site-header-title:hover .joys {
+    color: #FF3547;
+}
+
+.joys {
+    font-family: 'Sacramento';
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 .bootstrap-override #site-header-title {
@@ -79,6 +98,8 @@ header {
 
 .home-content h2 {
     margin-bottom: 1em;
+    text-align: center;
+    font-weight: bold;
 }
 
 .home-content ul {
@@ -87,6 +108,10 @@ header {
 
 .background-darkened {
     background-color: black;
+}
+
+.home-content .background-darkened {
+    margin-bottom: 2em;
 }
 
 /* Parallax tutorial https://www.w3schools.com/howto/howto_css_parallax.asp */
@@ -171,6 +196,7 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
 #footer-bottom {
     text-align: center;
     background-color: #323740;
+    color: rgba(255,255,255,.6);
 }
 
 #footer-bottom h3 {
@@ -182,4 +208,27 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     color: white;
     text-decoration: none;
     font-size: 1.15em;
+}
+
+@media only screen and (max-width: 576px) {
+    .bootstrap-override .navbar-nav a {
+        width: 100%;
+    }
+    
+    .bootstrap-override .navbar-nav a:not(:last-child) {
+        border: none;
+    }
+    
+    .bootstrap-override .navbar-nav a {
+        text-decoration: none;
+    }
+    
+    .content {
+        max-width: 100%;
+        border: none;
+    }
+    
+    .bootstrap-override #site-header-title h1 {
+        font-size: 2rem !important;
+    }
 }

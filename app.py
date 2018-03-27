@@ -24,12 +24,17 @@ class TestHandler(TemplateHandler):
 class RecipeHandler(TemplateHandler):
     def get(self):
         self.render_template("recipes.html", {})
+        
+class AboutHandler(TemplateHandler):
+    def get(self):
+        self.render_template("about.html", {})
 
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/test", TestHandler),
         (r"/recipes", RecipeHandler),
+        (r"/about", AboutHandler),
         (
             r"/static/(.*)",
             tornado.web.StaticFileHandler,
