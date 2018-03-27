@@ -9,23 +9,24 @@
         <link rel="stylesheet" href="static/css/style.css" type="text/css">
     </head>
     <body class="bootstrap-override">
-        <div id="site-header">
-            <a href="/" id="site-header-title"><h1>The Joys of Cooking</h1></a>
-            <h3>{% block pagetitle %}{% endblock %}</h3>
-        </div>
-<!-- navbar toggle button not appearing -->
-        <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-fixed-top">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto mr-auto">
-                    <a href="/recipes"><li>Recipes</li></a>
-                    <a href="/test"><li>Test</li></a>
-                    <a href="/about"><li>About</li></a>
-                </ul>
+        <header>
+            <div id="site-header">
+                <a href="/" id="site-header-title"><h1>The Joys of Cooking</h1></a>
+                <h3>{% block pagetitle %}{% endblock %}</h3>
             </div>
-        </nav>
+            <nav class="navbar navbar-expand-sm navbar-light bg-light navbar-fixed-top navbar-custom">
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto mr-auto">
+                        <a href="/recipes"><li>Recipes</li></a>
+                        <a href="/test"><li>Test</li></a>
+                        <a href="/about"><li>About</li></a>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         <div class="container-fluid">
             <div class="content">
                 {% block main %}{% endblock %}
