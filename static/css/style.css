@@ -31,11 +31,14 @@ header {
 
 .bootstrap-override .navbar-nav a {
     text-align: center;
-    /*padding-left: 2em;*/
-    /*padding-right: 2em;*/
-    width: 11em;
+    padding-left: 2em;
+    padding-right: 2em;
+    min-width: 9em;
+    max-width: 11em;
     color: white;
     text-decoration: underline #FF3547;
+    font-weight: 200;
+    font-family: 'Raleway', sans-serif;
     /*background-color: #FF3547;*/
 }
 
@@ -43,8 +46,6 @@ header {
     color: #FF3547;
     text-decoration: underline white;
 }
-
-
 
 .bootstrap-override .nav-bar {
     z-index: 900;
@@ -58,17 +59,32 @@ header {
     color: white;
 }
 
+/* Get rid of collapsing navbar and just have it shrink */
+
+.bootstrap-override nav button {
+    margin-top: -2em;
+}
+
 .content {
+    padding-top: 2em;
+    padding-left: 4em;
+    padding-right: 4em;
     padding-bottom: 100px;
     max-width: 80%;
     margin: auto;
     background-color: #FEFFFF;
     border-right: 10px solid lightgrey;
     border-left: 10px solid lightgrey;
+    letter-spacing: .05em;
+    font-weight: 300;
 }
 
 #site-header {
     text-align: center;
+}
+
+#site-header h3 {
+    font-family: 'Raleway', sans-serif;
 }
 
 .bootstrap-override #site-header-title h1 {
@@ -88,18 +104,23 @@ header {
     font-weight: 400;
 }
 
+.home-content .joys {
+    color: #FF3547;
+}
+
 .bootstrap-override #site-header-title {
     text-decoration: none;
 }
 
-.home-content {
-    padding-top: 2em;
-}
+/*.home-content {*/
+/*    padding: 2em 4em 0 4em;*/
+/*}*/
 
 .home-content h2 {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     text-align: center;
     font-weight: bold;
+    font-family: 'Raleway', sans-serif;
 }
 
 .home-content ul {
@@ -108,44 +129,42 @@ header {
 
 .background-darkened {
     background-color: black;
+    max-height: 500px;
 }
 
 .home-content .background-darkened {
     margin-bottom: 2em;
 }
 
-/* Parallax tutorial https://www.w3schools.com/howto/howto_css_parallax.asp */
-.bgimg1 {
-    background-image: url("../img/skillet.jpeg");
-    min-height: 500px;
+.img-container {
+    position: relative;
+    text-align: center;
 }
 
-.bgimg1, .bgimg2 {
-    opacity: .75;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.bgimg1 {
+    max-height: 500px;
+    padding: .25em;
+    border: solid 1px lightgrey;
+    border-radius: 1%;
+    display: block;
+    margin: 1em auto;
 }
 
 .caption {
     position: absolute;
     text-align: center;
-    left: 0;
-    top: calc(50% - 1em);
+    left: 50%;
+    top: 50%;
     width: 100%;
     color: white;
-    font-size: 2em;
+    font-size: 3vw;
     font-weight: bold;
     letter-spacing: .25em;
-}
-
-.recipe-grid, .home-content {
-    max-width: 960px;
+    transform: translate(-50%, -50%);
 }
 
 .recipe-grid-item {
-    padding: 40px;
+    padding: 1em;
     justify-content: center;
 }
 
@@ -161,8 +180,12 @@ header {
 by the user, so the h4 was given position: relative and ahigh z-index to force it to ignore its
 sibling's opacity change.
 https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image-opacity */
-.recipe-grid-item img:hover {
+.recipe-grid-item a:hover img {
     opacity: 0.5;
+}
+
+.recipe-grid-item a:hover h4 {
+    color: #FF3547;
 }
 
 .recipe-grid-item h4 {
@@ -171,12 +194,14 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     margin-bottom: 0;
     padding-top: .35em;
     color: white;
-    font-size: 1.5em;
-    font-weight: bold;
+    /*font-size: 1.5em;*/
+    font-size: 2vw;
+    font-weight: 200;
     position: relative;
     z-index: 100;
     background-color: rgba(0, 0, 0, .5);
     height: 2em;
+    font-family: 'Raleway', sans-serif;
 }
 
 #footer-main {
@@ -221,6 +246,10 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     font-weight: 300;
 }
 
+#footer-bottom a:hover {
+    color: #FF3547;
+}
+
 @media only screen and (max-width: 767px) {
     #footer-main ul {
         list-style-type: none;
@@ -233,22 +262,27 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
 @media only screen and (max-width: 576px) {
     .bootstrap-override .navbar-nav a {
         width: 100%;
+        text-decoration: none;
+        display: inline-block;
+        margin: auto;
     }
     
     .bootstrap-override .navbar-nav a:not(:last-child) {
         border: none;
     }
     
-    .bootstrap-override .navbar-nav a {
-        text-decoration: none;
-    }
-    
     .content {
         max-width: 100%;
         border: none;
+        padding-left: .2em;
+        padding-right: .2em;
     }
     
     .bootstrap-override #site-header-title h1 {
         font-size: 2rem !important;
+    }
+    
+    .joys {
+        color: #FF3547
     }
 }
