@@ -1,12 +1,19 @@
 import tornado.ioloop
 import tornado.web
 import os
+import boto3
 
 from jinja2 import Environment, PackageLoader, select_autoescape
   
 ENV = Environment(
     loader=PackageLoader('myapp', 'templates'),
     autoescape=select_autoescape(['html', 'xml']))
+
+client = boto3.client(
+  'ses',
+  aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+  aws_secret_access_key=os.environ.get('AWS_SECRET_KEY')
+)
     
 class TemplateHandler(tornado.web.RequestHandler):
     def render_template (self, tpl, context):
