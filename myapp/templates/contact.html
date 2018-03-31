@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block pagetitle %}
+Contact
+{% endblock %}
+
+{% block main %}
+    <div class="container contact">
+        <div class="row">
+            <div class="col-12 message">
+                {{ message }}
+            </div>
+        </div>
+        <form action="contact" method="post">
+            <input class="col-5" name="firstname" type="text" placeholder="First Name" required>
+            <input class="col-5" name="lastname" type="text" placeholder="Last Name" required>
+            <input name="email" type="email" placeholder="Email" required>
+            <textarea name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

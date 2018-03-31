@@ -12,7 +12,8 @@ ENV = Environment(
 client = boto3.client(
   'ses',
   aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
-  aws_secret_access_key=os.environ.get('AWS_SECRET_KEY')
+  aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+  region_name='us-east-1'
 )
     
 class TemplateHandler(tornado.web.RequestHandler):
@@ -35,6 +36,19 @@ class RecipeHandler(TemplateHandler):
 class AboutHandler(TemplateHandler):
     def get(self):
         self.render_template("about.html", {})
+        
+class ContactHandler(TemplateHandler):
+    def get(self):
+        self.render_template("contact.html", {})
+        
+    def post(self):
+        form_data = self.request.arguments
+        print(form_data)
+        email = self.get_body_argument('email')
+        sender_name = self.get_body_argument('firstname') + ' ' + self.get_body_argument('lastname')
+        message = self.get_body_argument('message')
+        send_email(sender_name, email, message)
+        self.render_template("contact.html", {'message': "Thanks for contacting us!"})
 
 def make_app():
     return tornado.web.Application([
@@ -42,12 +56,30 @@ def make_app():
         (r"/test", TestHandler),
         (r"/recipes", RecipeHandler),
         (r"/about", AboutHandler),
+        (r"/contact", ContactHandler),
         (
             r"/static/(.*)",
             tornado.web.StaticFileHandler,
             {'path': 'static'}
         ),
         ], autoreload=True)
+
+def send_email(sender_name, sender_email, message):
+    client.send_email(
+        Destination={
+            'ToAddresses': ['aaronwilkinson@gmail.com'],
+        },
+        Message={
+            'Body': {
+                'Text': {
+                    'Charset': 'UTF-8',
+                    'Data': "{} at {} says: \n\n{}".format(sender_name, sender_email, message),
+                },
+            },
+            'Subject': {'Charset': 'UTF-8', 'Data': 'The Joys of Cooking - Contact Message'},
+        },
+        Source='aaronwilkinson@gmail.com',
+    )
 
 if __name__ == "__main__":
     tornado.log.enable_pretty_logging()
