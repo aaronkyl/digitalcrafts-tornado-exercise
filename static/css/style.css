@@ -221,6 +221,13 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     min-height: 20vh;
 }
 
+.contact button {
+    background-color: #FF3547;
+    border-radius: .25em;
+    float: right;
+    border: none;
+}
+
 #footer-main {
     /* footer sticking to bottom solution from https://stackoverflow.com/questions/34796085/how-to-stick-footer-to-bottom-not-fixed-even-with-scrolling */
     text-align: center;
@@ -277,6 +284,9 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
 }
 
 @media only screen and (max-width: 767px) {
+    .bootstrap-override .content {
+        padding-bottom: 150px;
+    }
     #footer-main ul {
         list-style-type: none;
         margin: 0;

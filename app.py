@@ -49,7 +49,7 @@ class ContactHandler(TemplateHandler):
         
         send_email(sender_name, email, message)
         
-        self.render_template("contact.html", {'message': "Thank you for contacting us!"})
+        self.render_template("contact.html", {'message': "Thank you for contacting us!\n"})
 
 def make_app():
     return tornado.web.Application([
