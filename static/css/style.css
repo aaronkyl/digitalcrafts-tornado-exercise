@@ -25,6 +25,10 @@ header {
     padding: 10px;
 }
 
+.bootstrap-override {
+    height: 100%;
+}
+
 .bootstrap-override .navbar-nav a:not(:last-child) {
     border-right: 1px solid lightgrey;
 }
@@ -65,13 +69,13 @@ header {
     margin-top: -2em;
 }
 
-.content {
+.bootstrap-override .content {
     padding-top: 2em;
     padding-left: 4em;
     padding-right: 4em;
     padding-bottom: 100px;
     max-width: 80%;
-    margin: auto;
+    margin: 0 auto;
     background-color: #FEFFFF;
     border-right: 10px solid lightgrey;
     border-left: 10px solid lightgrey;
@@ -204,6 +208,19 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     font-family: 'Raleway', sans-serif;
 }
 
+.contact {
+    height: 100%;
+}
+
+.contact .message {
+    text-align: center;
+}
+
+.contact textarea {
+    width: 100%;
+    min-height: 20vh;
+}
+
 #footer-main {
     /* footer sticking to bottom solution from https://stackoverflow.com/questions/34796085/how-to-stick-footer-to-bottom-not-fixed-even-with-scrolling */
     text-align: center;
@@ -217,6 +234,15 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
     color: white;
     font-size: .75em;
     font-weight: 100;
+}
+
+#footer-main a {
+    color: white;
+    text-decoration: none;
+}
+
+#footer-main a:hover {
+    color: #FF3547;
 }
 
 #footer-main ul {
@@ -271,8 +297,8 @@ https://stackoverflow.com/questions/19638151/css-opacity-affecting-sibling-image
         border: none;
     }
     
-    .content {
-        max-width: 100%;
+    .bootstrap-override .content {
+        min-width: 100%;
         border: none;
         padding-left: .2em;
         padding-right: .2em;

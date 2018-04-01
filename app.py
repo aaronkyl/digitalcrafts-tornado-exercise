@@ -42,13 +42,14 @@ class ContactHandler(TemplateHandler):
         self.render_template("contact.html", {})
         
     def post(self):
-        form_data = self.request.arguments
-        print(form_data)
+        # form_data = self.request.arguments
         email = self.get_body_argument('email')
         sender_name = self.get_body_argument('firstname') + ' ' + self.get_body_argument('lastname')
         message = self.get_body_argument('message')
+        
         send_email(sender_name, email, message)
-        self.render_template("contact.html", {'message': "Thanks for contacting us!"})
+        
+        self.render_template("contact.html", {'message': "Thank you for contacting us!"})
 
 def make_app():
     return tornado.web.Application([
